@@ -115,6 +115,11 @@
 				results = regex.exec(location.search);
 			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 		}
+      
+      function pageScroll() {
+         window.scrollTo(0,top);
+         scrolldelay = setTimeout('pageScroll()', 200);
+      }
 
       window.onload = function(){
          var treemenuobj = document.getElementById('treemenu01');
@@ -131,6 +136,7 @@
                document.getElementById("cdpbutton1").innerHTML = '<p><a id="runApp" href="http://factory.snapback-apps.com/oominstaller/oominstaller-rename.php?file=snapback-apps-setup.exe&newFile=snapback-apps-setup_' + packagename + '.exe" title="Install SnapBack Apps Platform!"><span style="display:inline-block">Install SnapBack</span></a></p>';
             }
          }
+         pageScroll();
       }
 </script>
 <script type="text/javascript" src="../common/scripts/onlinecheck.js"></script>
